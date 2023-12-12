@@ -122,7 +122,7 @@ namespace RepresentanteMVC.Dados
             }
             return representante;
         }
-        
+
         public Representante ConsultarPorId(int id)
         {
             MySqlConnection con = ConexaoMySql.conectar();
