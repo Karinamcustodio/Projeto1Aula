@@ -177,14 +177,14 @@ namespace RepresentanteMVC.Dados
         public void Deletar(int id)
         {
             MySqlConnection con = ConexaoMySql.conectar();
-            MySqlCommand empresa = con.CreateCommand();
-
+            MySqlCommand pedidos = con.CreateCommand();
+            bool del = false;
             try
             {
                 con.Open();
-                empresa.CommandText = "DELETE FROM Empresa WHERE id = @id ";
-                empresa.Parameters.AddWithValue("id", id);
-                empresa.ExecuteNonQuery();
+                pedidos.CommandText = @$"Update Empresa set status = @del where id = {id}";
+                pedidos.Parameters.Add("del", MySqlDbType.Byte).Value = del;
+                pedidos.ExecuteNonQuery();
             }
             finally
             {

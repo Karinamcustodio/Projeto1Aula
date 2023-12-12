@@ -158,14 +158,14 @@ namespace RepresentanteMVC.Dados
         public void Deletar(int id)
         {
             MySqlConnection con = ConexaoMySql.conectar();
-            MySqlCommand representantes = con.CreateCommand(); 
-
+            MySqlCommand pedidos = con.CreateCommand();
+            bool del = false;
             try
             {
                 con.Open();
-                representantes.CommandText = "DELETE FROM Representante WHERE id = @id ";
-                representantes.Parameters.AddWithValue("id", id);
-                representantes.ExecuteNonQuery();
+                pedidos.CommandText = @$"Update Representante set status = @del where id = {id}";
+                pedidos.Parameters.Add("del", MySqlDbType.Byte).Value = del;
+                pedidos.ExecuteNonQuery();
             }
             finally
             {

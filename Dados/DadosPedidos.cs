@@ -50,7 +50,7 @@ namespace RepresentanteMVC.Dados
         {
             MySqlConnection con = ConexaoMySql.conectar();
             MySqlCommand pedido = con.CreateCommand();
-            pedidos.status = true;
+            pedidos.Status = true;
 
             try
             {
@@ -62,7 +62,7 @@ namespace RepresentanteMVC.Dados
                 pedido.Parameters.Add("representanteID", MySqlDbType.Int64).Value = pedidos.RepresentanteId;
                 pedido.Parameters.Add("EmpresaId", MySqlDbType.Int64).Value = pedidos.EmpresaId;
                 pedido.Parameters.Add("LojaId", MySqlDbType.Int64).Value = pedidos.LojaId;
-                pedido.Parameters.Add("status", MySqlDbType.Byte).Value = pedidos.status;
+                pedido.Parameters.Add("status", MySqlDbType.Byte).Value = pedidos.Status;
 
                 pedido.ExecuteNonQuery();
             }
