@@ -1,0 +1,51 @@
+﻿@model IEnumerable<RepresentanteMVC.Models.Loja>
+@{
+    ViewData["Title"] = "Lojas";
+}
+<h1 class="text-center">@ViewData["title"]</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(loja => loja.Id)</th>
+            <th>@Html.DisplayNameFor(loja => loja.RazaoSocial)</th>
+            <th>@Html.DisplayNameFor(loja => loja.Cnpj)</th>
+            <th>@Html.DisplayNameFor(loja => loja.InscEstadual)</th>
+            <th>@Html.DisplayNameFor(loja => loja.Fone)</th>
+            <th>@Html.DisplayNameFor(loja => loja.Email)</th>
+            <th>@Html.DisplayNameFor(loja => loja.Cep)</th>
+            <th>@Html.DisplayNameFor(loja => loja.Rua)</th>
+            <th>@Html.DisplayNameFor(loja => loja.Numero)</th>
+            <th>@Html.DisplayNameFor(loja => loja.Bairro)</th>
+            <th>@Html.DisplayNameFor(loja => loja.Cidade)</th>
+            <th>@Html.DisplayNameFor(loja => loja.Status) </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var loja in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(model => loja.Id)</td>
+                <td>@Html.DisplayFor(model => loja.RazaoSocial)</td>
+                <td>@Html.DisplayFor(model => loja.Cnpj)</td>
+                <td>@Html.DisplayFor(model => loja.InscEstadual)</td>
+                <td>@Html.DisplayFor(model => loja.Fone)</td>
+                <td>@Html.DisplayFor(model => loja.Email)</td>
+                <td>@Html.DisplayFor(model => loja.Cep)</td>
+                <td>@Html.DisplayFor(model => loja.Rua)</td>
+                <td>@Html.DisplayFor(model => loja.Numero)</td>
+                <td>@Html.DisplayFor(model => loja.Bairro)</td>
+                <td>@Html.DisplayFor(model => loja.Cidade)</td>
+                <td>@Html.DisplayFor(model => loja.Status)</td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new {id=loja.Id}) |
+                    @Html.ActionLink("Excluir", "Delete", new {id=loja.Id}, new { onclick = "return confirm('Tem certeza que deseja excluir a loja?')"})
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p>
+    <a asp-action="Create">Cadastrar</a>
+</p>

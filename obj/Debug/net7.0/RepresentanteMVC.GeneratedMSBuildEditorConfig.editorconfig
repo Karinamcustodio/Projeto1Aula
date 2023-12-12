@@ -16,12 +16,60 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Git\RepresentanteMVC
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Git/RepresentanteMVC/Views/Empresa/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wcmVzYVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Git/RepresentanteMVC/Views/Empresa/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wcmVzYVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Git/RepresentanteMVC/Views/Empresa/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wcmVzYVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Git/RepresentanteMVC/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Git/RepresentanteMVC/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Git/RepresentanteMVC/Views/Loja/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9qYVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Git/RepresentanteMVC/Views/Loja/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9qYVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Git/RepresentanteMVC/Views/Loja/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9qYVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Git/RepresentanteMVC/Views/Pedidos/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Git/RepresentanteMVC/Views/Pedidos/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Git/RepresentanteMVC/Views/Pedidos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Git/RepresentanteMVC/Views/Representante/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwcmVzZW50YW50ZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Git/RepresentanteMVC/Views/Representante/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwcmVzZW50YW50ZVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Git/RepresentanteMVC/Views/Representante/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwcmVzZW50YW50ZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Git/RepresentanteMVC/Views/Shared/Error.cshtml]

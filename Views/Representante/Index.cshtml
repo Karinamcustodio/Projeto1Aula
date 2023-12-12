@@ -1,0 +1,41 @@
+﻿@model IEnumerable<RepresentanteMVC.Models.Representante>
+@{
+    ViewData["Title"] = "Representantes";
+}
+<h1 class="text-center">@ViewData["title"]</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(representante => representante.Id)</th>
+            <th>@Html.DisplayNameFor(representante => representante.RazaoSocial)</th>
+            <th>@Html.DisplayNameFor(representante => representante.Cnpj)</th>
+            <th>@Html.DisplayNameFor(representante => representante.Core)</th>
+            <th>@Html.DisplayNameFor(representante => representante.Fone)</th>
+            <th>@Html.DisplayNameFor(representante => representante.Email)</th>
+            <th>@Html.DisplayNameFor(representante => representante.Status) </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var representante in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(model => representante.Id)</td>
+                <td>@Html.DisplayFor(model => representante.RazaoSocial)</td>
+                <td>@Html.DisplayFor(model => representante.Cnpj)</td>
+                <td>@Html.DisplayFor(model => representante.Core)</td>
+                <td>@Html.DisplayFor(model => representante.Fone)</td>
+                <td>@Html.DisplayFor(model => representante.Email)</td>
+                <td>@Html.DisplayFor(model => representante.Status)</td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new {id=representante.Id}) |
+                    @Html.ActionLink("Excluir", "Delete", new {id=representante.Id}, new { onclick = "return confirm('Tem certeza que deseja excluir o representante?')"})
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p>
+    <a asp-action="Create">Cadastrar</a>
+</p>

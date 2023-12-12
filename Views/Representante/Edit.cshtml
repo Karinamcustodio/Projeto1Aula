@@ -1,0 +1,43 @@
+﻿@model RepresentanteMVC.Models.Representante
+@{
+    ViewData["Title"] = "Editar representante";
+}
+<h1>@ViewData["Title"]</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="RazaoSocial" class="control-label"></label>
+                <input asp-for="RazaoSocial" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Cnpj" class="control-label"></label>
+                <input asp-for="Cnpj" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Core" class="control-label"></label>
+                <input asp-for="Core" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Fone" class="control-label"></label>
+                <input asp-for="Fone" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+            </div>
+            <div class="form-group">
+                @Html.CheckBoxFor(model => model.Status, new { @checked = "checked" })
+                <label for="MarcaAtiva"> Ativo</label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-action="Index">Voltar a lista</a>
+</div>

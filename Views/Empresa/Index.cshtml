@@ -1,0 +1,51 @@
+﻿@model IEnumerable<RepresentanteMVC.Models.Empresa>
+@{
+    ViewData["Title"] = "Empresas";
+}
+<h1 class="text-center">@ViewData["title"]</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(empresa => empresa.Id)</th>
+            <th>@Html.DisplayNameFor(empresa => empresa.RazaoSocial)</th>
+            <th>@Html.DisplayNameFor(empresa => empresa.Cnpj)</th>
+            <th>@Html.DisplayNameFor(empresa => empresa.InscEstadual)</th>
+            <th>@Html.DisplayNameFor(empresa => empresa.Fone)</th>
+            <th>@Html.DisplayNameFor(empresa => empresa.Email)</th>
+            <th>@Html.DisplayNameFor(empresa => empresa.Cep)</th>
+            <th>@Html.DisplayNameFor(empresa => empresa.Rua)</th>
+            <th>@Html.DisplayNameFor(empresa => empresa.Numero)</th>
+            <th>@Html.DisplayNameFor(empresa => empresa.Bairro)</th>
+            <th>@Html.DisplayNameFor(empresa => empresa.Cidade)</th>
+            <th>@Html.DisplayNameFor(empresa => empresa.Status) </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var empresa in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(model => empresa.Id)</td>
+                <td>@Html.DisplayFor(model => empresa.RazaoSocial)</td>
+                <td>@Html.DisplayFor(model => empresa.Cnpj)</td>
+                <td>@Html.DisplayFor(model => empresa.InscEstadual)</td>
+                <td>@Html.DisplayFor(model => empresa.Fone)</td>
+                <td>@Html.DisplayFor(model => empresa.Email)</td>
+                <td>@Html.DisplayFor(model => empresa.Cep)</td>
+                <td>@Html.DisplayFor(model => empresa.Rua)</td>
+                <td>@Html.DisplayFor(model => empresa.Numero)</td>
+                <td>@Html.DisplayFor(model => empresa.Bairro)</td>
+                <td>@Html.DisplayFor(model => empresa.Cidade)</td>
+                <td>@Html.DisplayFor(model => empresa.Status)</td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new {id=empresa.Id}) |
+                    @Html.ActionLink("Excluir", "Delete", new {id=empresa.Id}, new { onclick = "return confirm('Tem certeza que deseja excluir a empresa?')"})
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p>
+    <a asp-action="Create">Cadastrar</a>
+</p>

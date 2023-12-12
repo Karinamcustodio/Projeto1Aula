@@ -1,0 +1,41 @@
+﻿@model IEnumerable<RepresentanteMVC.Models.Pedidos>
+@{
+    ViewData["Title"] = "Pedidos";
+}
+<h1 class="text-center">@ViewData["title"]</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(pedidos => pedidos.Id)</th>
+            <th>@Html.DisplayNameFor(pedidos => pedidos.Data)</th>
+            <th>@Html.DisplayNameFor(pedidos => pedidos.Valor)</th>
+            <th>@Html.DisplayNameFor(pedidos => pedidos.PercentualComissao)</th>
+            <th>@Html.DisplayNameFor(pedidos => pedidos.Representante.RazaoSocial)</th>
+            <th>@Html.DisplayNameFor(pedidos => pedidos.Empresa.RazaoSocial)</th>
+            <th>@Html.DisplayNameFor(pedidos => pedidos.Loja.RazaoSocial)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var pedidos in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(model => pedidos.Id)</td>
+                <td>@Html.DisplayFor(model => pedidos.Data)</td>
+                <td>@Html.DisplayFor(model => pedidos.Valor)</td>
+                <td>@Html.DisplayFor(model => pedidos.PercentualComissao)</td>
+                <td>@Html.DisplayFor(model => pedidos.Representante.RazaoSocial)</td>
+                <td>@Html.DisplayFor(model => pedidos.Empresa.RazaoSocial)</td>
+                <td>@Html.DisplayFor(model => pedidos.Loja.RazaoSocial)</td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new {id=pedidos.Id}) |
+                    @Html.ActionLink("Excluir", "Delete", new {id=pedidos.Id}, new { onclick = "return confirm('Tem certeza que deseja excluir o pedido?')"})
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p>
+    <a asp-action="Create">Cadastrar</a>
+</p>
