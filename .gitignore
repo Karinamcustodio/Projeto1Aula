@@ -634,3 +634,7 @@ $RECYCLE.BIN/
 # Exclude bin and obj directories
 bin/
 obj/
+/obj/
+/bin/
+.vs/
+*.editorconfig
