@@ -16,5 +16,7 @@ namespace RepresentanteMVC.Models
 
         [Display(Name = "Ativo")] 
         public bool Status { get; set; }
+
+        public string erro { get; set; }
     }
 }

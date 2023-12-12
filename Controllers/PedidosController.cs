@@ -1,15 +1,34 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Org.BouncyCastle.Tls;
 using RepresentanteMVC.Dados;
 using RepresentanteMVC.Models;
-using System.Globalization;
 
 namespace RepresentanteMVC.Controllers
 {
     public class PedidosController : Controller
     {
-        public IActionResult Index()
+        public int id;
+        public IActionResult Index() => View();
+        public IActionResult verificarAcesso(Pedidos pedidos)
         {
+            Representante representante = new();
+            id = pedidos.RepresentanteId;
+            bool conf = new Dados.DadosPedidos().VerificarRepresentante(pedidos);
+
+            if (conf == true)
+            {
+                return RedirectToAction("Pedidos");
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
+
+        }
+        public IActionResult Pedidos()
+        {
+
             return View(new DadosPedidos().ConsultarTodos());
         }
 
@@ -18,26 +37,26 @@ namespace RepresentanteMVC.Controllers
         {
             ViewBag.representante = new DadosRepresentante().ConsultarNomeId()
               .Select(representantes => new SelectListItem()
-                 {
-                   Text = representantes.RazaoSocial, 
-                   Value = representantes.Id.ToString()
-                 })
+              {
+                  Text = representantes.RazaoSocial,
+                  Value = representantes.Id.ToString()
+              })
               .ToList();
 
             ViewBag.empresa = new DadosEmpresa().ConsultarNomeId()
               .Select(empresas => new SelectListItem()
-                {
-                    Text = empresas.RazaoSocial,
-                    Value = empresas.Id.ToString()
-                })
+              {
+                  Text = empresas.RazaoSocial,
+                  Value = empresas.Id.ToString()
+              })
             .ToList();
 
             ViewBag.loja = new DadosLoja().ConsultarNomeId()
                 .Select(lojas => new SelectListItem()
-                  { 
-                    Text = lojas.RazaoSocial, 
-                    Value =  lojas.Id.ToString()
-                  })
+                {
+                    Text = lojas.RazaoSocial,
+                    Value = lojas.Id.ToString()
+                })
                 .ToList();
 
             return View();
@@ -68,7 +87,7 @@ namespace RepresentanteMVC.Controllers
             }
             return View(pedidos);
         }
-        
+
         [HttpGet]
         public IActionResult Details(int? id)
         {

@@ -13,7 +13,7 @@ namespace RepresentanteMVC.Models
         public int RepresentanteId { get; set; }
         public int EmpresaId { get; set; }
         public int LojaId { get; set; }
-
+        public bool status { get; set; }
         public virtual Representante Representante { get; set; }
         public virtual Empresa Empresa { get; set; }
         public virtual Loja Loja { get; set; }
