@@ -1,61 +1,101 @@
 ﻿<!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - RepresentanteMVC</title>
+    <title>@ViewData["Title"] - Projeto_caua</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/RepresentanteMVC.styles.css" asp-append-version="true" />
+    <style>
+        h3{
+            color:white;
+            margin-top:6px;
+            margin-left:5px;
+        }
+        .sidebar {
+            display: flex;
+            position: fixed;
+            justify-content: right;
+            flex-direction: column;
+            background-color: #283541;
+            color: white;
+            height: 100%;
+            width: 250px;
+            font-family: monospace;
+            font-size: 25px;
+            zoom: 0.7;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            
+        }
+
+        .navs {
+            display: inline-flex;
+            text-decoration: none;
+            color: white;
+        }
+
+        .links {
+            margin: 0px;
+            color: white;
+            text-decoration: none;
+        }
+        .home{
+            margin: 0px;
+            color: white;
+            text-decoration: none;
+            display: inline-flex;
+            color:lightblue;
+        }
+
+        .links:hover {
+            background-color: #1779FA;
+                width: 90%;
+                opacity:1px;
+                font-size: 25px;
+                color: white;
+                text-decoration: none;
+                border-radius: 0px 50px 50px 0px;
+                box-shadow: 0px 0px 35px 1px black;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">RepresentanteMVC</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Representante" asp-action="Index">Representantes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Loja" asp-action="Index">Lojas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Empresa" asp-action="Index">Empresas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Pedidos" asp-action="Index">Pedidos</a>
-                        </li>
-                    </ul>
-                </div>
+    <div>
+        <div class="sidebar">
+            <div class="navs">
+                <a class="home" asp-area="" asp-controller="Home" asp-action="Index">
+                <img src="./lib/img/imagem_nuvem.png" style="width:40px; height:auto;"/>
+                <h3>Agenda PRACK</h3>
+
+                </a>
             </div>
-        </nav>
-    </header>
+            <div class="navs">
+                <a class="links" asp-area="" asp-controller="Pedidos" asp-action="Index">Pedidos</a>
+            </div>
+            <div class="navs">
+                <a class="links" asp-area="" asp-controller="Empresa" asp-action="Index">Empresas</a>
+            </div>
+            <div class="navs">
+                <a class="links" asp-area="" asp-controller="Loja" asp-action="Index">Lojas</a>
+            </div>
+            <div class="navs">
+                <a class="links" asp-area="" asp-controller="Representante" asp-action="Index">Representantes</a>
+            </div>
+
+        </div>
+    </div>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - RepresentanteMVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+ 

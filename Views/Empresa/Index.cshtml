@@ -2,50 +2,53 @@
 @{
     ViewData["Title"] = "Empresas";
 }
-<h1 class="text-center">@ViewData["title"]</h1>
+<div class="container col-md-15" " style="margin-left:50px;">
+    <h1 class="text-center">@ViewData["title"]</h1>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>@Html.DisplayNameFor(empresa => empresa.Id)</th>
-            <th>@Html.DisplayNameFor(empresa => empresa.RazaoSocial)</th>
-            <th>@Html.DisplayNameFor(empresa => empresa.Cnpj)</th>
-            <th>@Html.DisplayNameFor(empresa => empresa.InscEstadual)</th>
-            <th>@Html.DisplayNameFor(empresa => empresa.Fone)</th>
-            <th>@Html.DisplayNameFor(empresa => empresa.Email)</th>
-            <th>@Html.DisplayNameFor(empresa => empresa.Cep)</th>
-            <th>@Html.DisplayNameFor(empresa => empresa.Rua)</th>
-            <th>@Html.DisplayNameFor(empresa => empresa.Numero)</th>
-            <th>@Html.DisplayNameFor(empresa => empresa.Bairro)</th>
-            <th>@Html.DisplayNameFor(empresa => empresa.Cidade)</th>
-            <th>@Html.DisplayNameFor(empresa => empresa.Status) </th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var empresa in Model)
-        {
+    <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
             <tr>
-                <td>@Html.DisplayFor(model => empresa.Id)</td>
-                <td>@Html.DisplayFor(model => empresa.RazaoSocial)</td>
-                <td>@Html.DisplayFor(model => empresa.Cnpj)</td>
-                <td>@Html.DisplayFor(model => empresa.InscEstadual)</td>
-                <td>@Html.DisplayFor(model => empresa.Fone)</td>
-                <td>@Html.DisplayFor(model => empresa.Email)</td>
-                <td>@Html.DisplayFor(model => empresa.Cep)</td>
-                <td>@Html.DisplayFor(model => empresa.Rua)</td>
-                <td>@Html.DisplayFor(model => empresa.Numero)</td>
-                <td>@Html.DisplayFor(model => empresa.Bairro)</td>
-                <td>@Html.DisplayFor(model => empresa.Cidade)</td>
-                <td>@Html.DisplayFor(model => empresa.Status)</td>
-                <td>
-                    @Html.ActionLink("Editar", "Edit", new {id=empresa.Id}) |
-                    @Html.ActionLink("Excluir", "Delete", new {id=empresa.Id}, new { onclick = "return confirm('Tem certeza que deseja excluir a empresa?')"})
-                </td>
+                <th class="text-center">@Html.DisplayNameFor(empresa => empresa.Id)</th>
+                <th class="text-center">@Html.DisplayNameFor(empresa => empresa.RazaoSocial)</th>
+                <th class="text-center">@Html.DisplayNameFor(empresa => empresa.Cnpj)</th>
+                <th class="text-center">@Html.DisplayNameFor(empresa => empresa.Fone)</th>
+                <th class="text-center">@Html.DisplayNameFor(empresa => empresa.InscEstadual)</th>
+                <th class="text-center">@Html.DisplayNameFor(empresa => empresa.Email)</th>
+                <th class="text-center">@Html.DisplayNameFor(empresa => empresa.Cep)</th>
+                <th class="text-center">@Html.DisplayNameFor(empresa => empresa.Rua)</th>
+                <th class="text-center">@Html.DisplayNameFor(empresa => empresa.Numero)</th>
+                <th class="text-center">@Html.DisplayNameFor(empresa => empresa.Bairro)</th>
+                <th class="text-center">@Html.DisplayNameFor(empresa => empresa.Cidade)</th>
+                <th class="text-center">@Html.DisplayNameFor(empresa => empresa.Status)</th>
+                <th class="text-center">Opções</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var empresa in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(model => empresa.Id)</td>
+                    <td>@Html.DisplayFor(model => empresa.RazaoSocial)</td>
+                    <td>@Html.DisplayFor(model => empresa.Cnpj)</td>
+                    <td>@Html.DisplayFor(model => empresa.InscEstadual)</td>
+                    <td>@Html.DisplayFor(model => empresa.Fone)</td>
+                    <td>@Html.DisplayFor(model => empresa.Email)</td>
+                    <td>@Html.DisplayFor(model => empresa.Cep)</td>
+                    <td>@Html.DisplayFor(model => empresa.Rua)</td>
+                    <td>@Html.DisplayFor(model => empresa.Numero)</td>
+                    <td>@Html.DisplayFor(model => empresa.Bairro)</td>
+                    <td>@Html.DisplayFor(model => empresa.Cidade)</td>
+                    <td>@Html.DisplayFor(model => empresa.Status)</td>
+                    <td class="text-center d-flex justify-content-center">
+                        <a asp-action="Edit" asp-route-id="@empresa.Id" class="btn btn-warning m-1" >Editar</a>
+                        <a asp-action="Delete" asp-route-id="@empresa.Id" class="btn btn-danger m-1" onclick="return confirm('Tem certeza que deseja excluir a empresa?')">Excluir</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 
-<p>
-    <a asp-action="Create">Cadastrar</a>
-</p>
+    <p>
+        <a asp-action="Create" class="btn btn-primary">Cadastrar</a>
+    </p>
+</div>
