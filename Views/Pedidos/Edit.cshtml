@@ -1,46 +1,51 @@
 ﻿@model RepresentanteMVC.Models.Pedidos
 @{
-    ViewData["Title"] = "Editar Pedido";
+	ViewData["Title"] = "Adicionar Pedido";
 }
-<h1>@ViewData["Title"]</h1>
+<div class="row" style="margin-left:50px;">
+	<h1>@ViewData["Title"]</h1>
 
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Data" class="control-label"></label>
-                <input asp-for="Data" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label asp-for="Valor" class="control-label"></label>
-                <input asp-for="Valor" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label asp-for="PercentualComissao" class="control-label"></label>
-                <input asp-for="PercentualComissao" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label asp-for="Representante.RazaoSocial" class="control-label"></label>
-                <select asp-for="RepresentanteId" asp-items="@ViewBag.representante" class="form-control"></select>
-                <span asp-validation-for="RepresentanteId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Empresa.RazaoSocial" class="control-label"></label>
-                <select asp-for="EmpresaId" asp-items="@ViewBag.empresa" class="form-control"></select>
-                <span asp-validation-for="EmpresaId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Loja.RazaoSocial" class="control-label"></label>
-                <select asp-for="LojaId" asp-items="@ViewBag.loja" class="form-control"></select>
-                <span asp-validation-for="LojaId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Salvar" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
+	<div class="col-md-4">
+		<form asp-action="Edit">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<div class="form-group">
+				<label asp-for="Data" class="control-label"></label>
+				<input asp-for="Data" class="form-control" />
+			</div>
+			<div class="form-group">
+				<label asp-for="Valor" class="control-label"></label>
+				<input asp-for="Valor" class="form-control" />
+			</div>
+			<div class="form-group">
+				<label asp-for="PercentualComissao" class="control-label"></label>
+				<input asp-for="PercentualComissao" class="form-control" />
+			</div>
+			<div class="form-group">
+				<label asp-for="Representante.RazaoSocial" class="control-label"></label>
+				<select asp-for="RepresentanteId" asp-items="@ViewBag.representante" class="form-control"></select>
+				<span asp-validation-for="RepresentanteId" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Empresa.RazaoSocial" class="control-label"></label>
+				<select asp-for="EmpresaId" asp-items="@ViewBag.empresa" class="form-control"></select>
+				<span asp-validation-for="EmpresaId" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Loja.RazaoSocial" class="control-label"></label>
+				<select asp-for="LojaId" asp-items="@ViewBag.loja" class="form-control"></select>
+				<span asp-validation-for="LojaId" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<input type="submit" value="Salvar" class="btn btn-primary" />
+			</div>
+		</form>
+	</div>
+	<div>
+		<a asp-action="Index">Voltar a lista</a>
+	</div>
 </div>
-<div>
-    <a asp-action="Index">Voltar a lista</a>
-</div>
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}

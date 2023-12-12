@@ -2,40 +2,44 @@
 @{
     ViewData["Title"] = "Representantes";
 }
-<h1 class="text-center">@ViewData["title"]</h1>
+<div class="container" style="margin-left:50px;">
+    <h1 class="text-center">@ViewData["title"]</h1>
+    <p>
+        <a asp-action="Create" class="btn btn-primary">Cadastrar</a>
+    </p>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>@Html.DisplayNameFor(representante => representante.Id)</th>
-            <th>@Html.DisplayNameFor(representante => representante.RazaoSocial)</th>
-            <th>@Html.DisplayNameFor(representante => representante.Cnpj)</th>
-            <th>@Html.DisplayNameFor(representante => representante.Core)</th>
-            <th>@Html.DisplayNameFor(representante => representante.Fone)</th>
-            <th>@Html.DisplayNameFor(representante => representante.Email)</th>
-            <th>@Html.DisplayNameFor(representante => representante.Status) </th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var representante in Model)
-        {
-            <tr>
-                <td>@Html.DisplayFor(model => representante.Id)</td>
-                <td>@Html.DisplayFor(model => representante.RazaoSocial)</td>
-                <td>@Html.DisplayFor(model => representante.Cnpj)</td>
-                <td>@Html.DisplayFor(model => representante.Core)</td>
-                <td>@Html.DisplayFor(model => representante.Fone)</td>
-                <td>@Html.DisplayFor(model => representante.Email)</td>
-                <td>@Html.DisplayFor(model => representante.Status)</td>
-                <td>
-                    @Html.ActionLink("Editar", "Edit", new {id=representante.Id}) |
-                    @Html.ActionLink("Excluir", "Delete", new {id=representante.Id}, new { onclick = "return confirm('Tem certeza que deseja excluir o representante?')"})
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
-
-<p>
-    <a asp-action="Create">Cadastrar</a>
-</p>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th class="text-center">@Html.DisplayNameFor(representante => representante.Id)</th>
+                    <th class="text-center">@Html.DisplayNameFor(representante => representante.RazaoSocial)</th>
+                    <th class="text-center">@Html.DisplayNameFor(representante => representante.Cnpj)</th>
+                    <th class="text-center">@Html.DisplayNameFor(representante => representante.Core)</th>
+                    <th class="text-center">@Html.DisplayNameFor(representante => representante.Fone)</th>
+                    <th class="text-center">@Html.DisplayNameFor(representante => representante.Email)</th>
+                    <th class="text-center">@Html.DisplayNameFor(representante => representante.Status)</th>
+                    <th class="text-center">Funções</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var representante in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(model => representante.Id)</td>
+                        <td>@Html.DisplayFor(model => representante.RazaoSocial)</td>
+                        <td>@Html.DisplayFor(model => representante.Cnpj)</td>
+                        <td>@Html.DisplayFor(model => representante.Core)</td>
+                        <td>@Html.DisplayFor(model => representante.Fone)</td>
+                        <td>@Html.DisplayFor(model => representante.Email)</td>
+                        <td>@Html.DisplayFor(model => representante.Status)</td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@representante.Id" class="btn btn-warning">Editar</a>
+                            <a asp-action="Delete" asp-route-id="@representante.Id" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja excluir o representante?')">Excluir</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
