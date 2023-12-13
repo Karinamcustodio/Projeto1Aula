@@ -46,7 +46,7 @@ namespace RepresentanteMVC.Dados
             try
             {
                 con.Open();
-                lojas.CommandText = "UPDATE Loja SET razaoSocial = @razaoSocial, cnpj = @cnpj, inscEstadual = @inscEstadual, fone = @fone, email = @email, CEP = @cep rua = @rua, numero = @numero, bairro = @bairro, cidade = @cidade, status = @status WHERE id = @id";
+                lojas.CommandText = "UPDATE Loja SET razaoSocial = @razaoSocial, cnpj = @cnpj, inscEstadual = @inscEstadual, fone = @fone, email = @email, CEP = @cep, rua = @rua, numero = @numero, bairro = @bairro, cidade = @cidade, status = @status WHERE id = @id";
                 lojas.Parameters.Add("razaoSocial", MySqlDbType.VarString).Value = loja.RazaoSocial;
                 lojas.Parameters.Add("cnpj", MySqlDbType.VarString).Value = loja.Cnpj;
                 lojas.Parameters.Add("inscEstadual", MySqlDbType.VarString).Value = loja.InscEstadual;
@@ -178,12 +178,12 @@ namespace RepresentanteMVC.Dados
         {
             MySqlConnection con = ConexaoMySql.conectar();
             MySqlCommand loja = con.CreateCommand();
-
+            bool del = false;
             try
             {
                 con.Open();
-                loja.CommandText = "DELETE FROM Loja WHERE id = @id ";
-                loja.Parameters.AddWithValue("id", id);
+                loja.CommandText = @$"Update Loja set status = @del where id = {id}";
+                loja.Parameters.Add("del", MySqlDbType.Byte).Value = del;
                 loja.ExecuteNonQuery();
             }
             finally

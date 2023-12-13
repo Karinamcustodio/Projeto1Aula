@@ -178,12 +178,12 @@ namespace RepresentanteMVC.Dados
         {
             MySqlConnection con = ConexaoMySql.conectar();
             MySqlCommand empresa = con.CreateCommand();
-
+            bool del = false;
             try
             {
                 con.Open();
-                empresa.CommandText = "DELETE FROM Empresa WHERE id = @id ";
-                empresa.Parameters.AddWithValue("id", id);
+                empresa.CommandText = @$"Update Empresa set status = @del where id = {id}";
+                empresa.Parameters.Add("del", MySqlDbType.Byte).Value = del;
                 empresa.ExecuteNonQuery();
             }
             finally

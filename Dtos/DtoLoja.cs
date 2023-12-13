@@ -7,8 +7,6 @@ namespace RepresentanteMVC.Dto
 {
     public class DtoLoja
     {
-        
-
 
     }
 }

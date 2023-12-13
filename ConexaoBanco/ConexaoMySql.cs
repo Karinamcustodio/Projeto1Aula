@@ -6,7 +6,7 @@ namespace RepresentanteMVC.ConexaoBanco
     {
         public static MySqlConnection conectar()
         {
-            string stringConexao = "Server=localhost;Database=prack;Uid=root;Pwd=admin";
+            string stringConexao = "Server=localhost;Database=bd_prack;Uid=root;Pwd=admin";
             MySqlConnection connection = new MySqlConnection(stringConexao);
             return connection;
         }

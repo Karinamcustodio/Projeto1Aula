@@ -4,9 +4,6 @@
 }
 <div class="container" style="margin-left:50px;">
     <h1 class="text-center">@ViewData["title"]</h1>
-    <p>
-        <a asp-action="Create" class="btn btn-primary">Cadastrar</a>
-    </p>
 
     <div class="table-responsive">
         <table class="table table-bordered">
@@ -41,5 +38,9 @@
                 }
             </tbody>
         </table>
+
+        <p>
+            <a asp-action="Create" class="btn btn-primary">Cadastrar</a>
+        </p>
     </div>
 </div>

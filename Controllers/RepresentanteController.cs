@@ -34,9 +34,6 @@ namespace RepresentanteMVC.Controllers
         [HttpPost]
         public IActionResult Edit(Representante representante)
         {
-            Representante representes = new DadosRepresentante().ConsultarPorId(representante.Id);
-            representes.RazaoSocial = representante.RazaoSocial;
-
             if (new DadosRepresentante().Editar(representante))
             {
                 return RedirectToAction("Index");
