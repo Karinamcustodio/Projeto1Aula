@@ -163,7 +163,7 @@ namespace RepresentanteMVC.Dados
             try
             {
                 con.Open();
-                representante.CommandText = @$"Update Representante set status = @del where id = {id}";
+                representante.CommandText = @$"UPDATE Representante SET status = @del WHERE id = {id}";
                 representante.Parameters.Add("del", MySqlDbType.Byte).Value = del;
                 representante.ExecuteNonQuery();
             }

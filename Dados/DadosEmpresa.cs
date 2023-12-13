@@ -182,7 +182,7 @@ namespace RepresentanteMVC.Dados
             try
             {
                 con.Open();
-                empresa.CommandText = @$"Update Empresa set status = @del where id = {id}";
+                empresa.CommandText = @$"UPDATE Empresa SET status = @del WHERE id = {id}";
                 empresa.Parameters.Add("del", MySqlDbType.Byte).Value = del;
                 empresa.ExecuteNonQuery();
             }

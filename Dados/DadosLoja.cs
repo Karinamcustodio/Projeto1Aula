@@ -182,7 +182,7 @@ namespace RepresentanteMVC.Dados
             try
             {
                 con.Open();
-                loja.CommandText = @$"Update Loja set status = @del where id = {id}";
+                loja.CommandText = @$"UPDATE Loja SET status = @del WHERE id = {id}";
                 loja.Parameters.Add("del", MySqlDbType.Byte).Value = del;
                 loja.ExecuteNonQuery();
             }
