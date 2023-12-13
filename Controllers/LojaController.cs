@@ -34,9 +34,6 @@ namespace RepresentanteMVC.Controllers
         [HttpPost]
         public IActionResult Edit(Loja loja)
         {
-            Loja lojas = new DadosLoja().ConsultarPorId(loja.Id);
-            lojas.RazaoSocial = loja.RazaoSocial;
-
             if (new DadosLoja().Editar(loja))
             {
                 return RedirectToAction("Index");

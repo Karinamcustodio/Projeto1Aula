@@ -28,7 +28,7 @@ namespace RepresentanteMVC
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Empresa}/{action=Index}/{id?}");
+                pattern: "{controller=Pedidos}/{action=Index}/{id?}");
 
             app.Run();
         }

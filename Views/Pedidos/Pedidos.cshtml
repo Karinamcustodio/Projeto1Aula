@@ -22,6 +22,7 @@
 				<th class="text-center">@Html.DisplayNameFor(pedidos => pedidos.Representante.RazaoSocial)</th>
 				<th class="text-center">@Html.DisplayNameFor(pedidos => pedidos.Empresa.RazaoSocial)</th>
 				<th class="text-center">@Html.DisplayNameFor(pedidos => pedidos.Loja.RazaoSocial)</th>
+				<th class="text-center">@Html.DisplayNameFor(pedidos => pedidos.Status)</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -36,6 +37,7 @@
 					<td>@Html.DisplayFor(model => pedidos.Representante.RazaoSocial)</td>
 					<td>@Html.DisplayFor(model => pedidos.Empresa.RazaoSocial)</td>
 					<td>@Html.DisplayFor(model => pedidos.Loja.RazaoSocial)</td>
+					<td>@Html.DisplayFor(model => pedidos.Loja.Status)</td>
 					<td>
 							@Html.ActionLink("Editar", "Edit", new { id = pedidos.Id }) |
 							@Html.ActionLink("Excluir", "Delete", new { id = pedidos.Id }, new { onclick = "return confirm('Tem certeza que deseja excluir o pedido?')" })
@@ -45,6 +47,7 @@
 
 		</tbody>
 	</table>
+
 	<p>
 		<a asp-action="Create">Cadastrar</a>
 	</p>

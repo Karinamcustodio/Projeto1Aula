@@ -6,11 +6,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Pedidos\Pedidos.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MySql.Data" Version="8.2.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Dados\" />
     <Folder Include="Dtos\" />
     <Folder Include="Interface\" />
   </ItemGroup>

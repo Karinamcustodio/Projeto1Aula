@@ -14,9 +14,10 @@ namespace RepresentanteMVC.Models
         public int EmpresaId { get; set; }
         public int LojaId { get; set; }
 
-        [Display(Name = "Ativo")]
-        public bool Status { get; set; }
-        public virtual Representante Representante { get; set; }
+		[Display(Name = "Ativo")]
+		public bool Status { get; set; }
+
+		public virtual Representante Representante { get; set; }
         public virtual Empresa Empresa { get; set; }
         public virtual Loja Loja { get; set; }
     }
