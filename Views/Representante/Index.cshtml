@@ -32,7 +32,7 @@
                         <td>@Html.DisplayFor(model => representante.Status)</td>
                         <td>
                             <a asp-action="Edit" asp-route-id="@representante.Id" class="btn btn-warning">Editar</a>
-                            <a asp-action="Delete" asp-route-id="@representante.Id" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja excluir o representante?')">Excluir</a>
+                            <a asp-action="Delete" asp-route-id="@representante.Id" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja inativar o representante?')">Excluir</a>
                         </td>
                     </tr>
                 }

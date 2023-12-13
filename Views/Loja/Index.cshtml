@@ -41,7 +41,7 @@
                     <td>@Html.DisplayFor(model => loja.Status)</td>
                     <td>
                         <a asp-action="Edit" asp-route-id="@loja.Id" class="btn btn-warning">Editar</a>
-                        <a asp-action="Delete" asp-route-id="@loja.Id" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja excluir a loja?')">Excluir</a>
+                        <a asp-action="Delete" asp-route-id="@loja.Id" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja inativar a loja?')">Excluir</a>
                     </td>
                 </tr>
             }
